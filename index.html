@@ -317,17 +317,19 @@ footer{padding:44px 0;background:#f3eeed;color:var(--muted);font-size:13px}
   .mini{padding:13px 12px}
   .mn{font-size:24px}
 
-  /* Фото-фоны на мобильном: уменьшаем, делаем менее навязчивыми */
-  .ph-r{width:100%;
-    -webkit-mask:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.18) 30%,rgba(0,0,0,.28) 60%,transparent 100%);
-    mask:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.18) 30%,rgba(0,0,0,.28) 60%,transparent 100%);
+  /* Фото-фоны на мобильном — боковое растворение, без чётких границ */
+  .ph-r{
+    width:100%;
+    -webkit-mask:radial-gradient(ellipse 80% 80% at 75% 50%, black 0%, black 30%, transparent 100%);
+    mask:radial-gradient(ellipse 80% 80% at 75% 50%, black 0%, black 30%, transparent 100%);
   }
-  .ph-l{width:100%;
-    -webkit-mask:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.18) 30%,rgba(0,0,0,.28) 60%,transparent 100%);
-    mask:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.18) 30%,rgba(0,0,0,.28) 60%,transparent 100%);
+  .ph-l{
+    width:100%;
+    -webkit-mask:radial-gradient(ellipse 80% 80% at 25% 50%, black 0%, black 30%, transparent 100%);
+    mask:radial-gradient(ellipse 80% 80% at 25% 50%, black 0%, black 30%, transparent 100%);
   }
-  .ph-r img,.ph-l img{opacity:.20}
-  .ph-full img{opacity:.16}
+  .ph-r img,.ph-l img{opacity:.38;mix-blend-mode:multiply}
+  .ph-full img{opacity:.28}
 
   /* Method */
   .sys-cards{grid-template-columns:1fr 1fr}
